@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308221418) do
+ActiveRecord::Schema.define(version: 20160309010730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20160308221418) do
     t.date    "mow_date",      default: '2016-03-08', null: false
     t.date    "next_mow_date"
     t.integer "technician_id"
+  end
+
+  create_table "mowings", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "technician_id"
+    t.date    "mow_date"
   end
 
   create_table "technicians", force: :cascade do |t|
