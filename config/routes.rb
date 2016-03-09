@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :customers
   resources :technicians
-
+  resources :mowings
+  resources :invoices
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

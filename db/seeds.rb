@@ -8,6 +8,7 @@
 Technician.destroy_all
 Customer.destroy_all
 Mowing.destroy_all
+Invoice.destroy_all
 
 technician1 = Technician.create(name:'Art Garfunklel')
 technician1.save!
@@ -38,3 +39,5 @@ mowing2.save!
 
 mowing3 = Mowing.create(technician_id:technician2.id, customer_id:customer3.id, mow_date:"2016/6/6")
 mowing3.save!
+
+invoice1 = Invoice.create(mowing_id: mowing1.id, cost: 100)
